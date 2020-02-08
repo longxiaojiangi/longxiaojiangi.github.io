@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>龙小江i的网络日志</title>
+  
+  <subtitle>❤ 言必信，行必果 ❤</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://longxiaojiangi.github.io/"/>
+  <updated>2020-02-08T16:15:48.609Z</updated>
+  <id>https://longxiaojiangi.github.io/</id>
+  
+  <author>
+    <name>龙小江i</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MySQL数据库字符集修改为utf8mb4</title>
+    <link href="https://longxiaojiangi.github.io/note/190209-230820/"/>
+    <id>https://longxiaojiangi.github.io/note/190209-230820/</id>
+    <published>2019-02-09T15:08:20.000Z</published>
+    <updated>2020-02-08T16:15:48.609Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>utf8mb4是utf8的超集，utf8mb4解决了MySQL数据库存储emoji表情的问题。</p></blockquote><a id="more"></a><ol><li>打开配置文件<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">安装文件夹\MySQL\MySQL Server 8.0\my.ini</span><br></pre></td></tr></table></figure></li><li>添加以下内容<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># 本地客户端编码</span><br><span class="line">[client]</span><br><span class="line">default-character-set &#x3D; utf8mb4</span><br><span class="line"></span><br><span class="line"># 远程客户端编码</span><br><span class="line">[mysql]</span><br><span class="line">default-character-set &#x3D; utf8mb4</span><br><span class="line"></span><br><span class="line"># 本地服务器编码</span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server&#x3D;utf8mb4</span><br><span class="line">character-set-client-handshake&#x3D;FALSE</span><br><span class="line">collation-server &#x3D; utf8mb4_unicode_ci</span><br><span class="line"># 忽略表名大小写（根据需要决定是否添加此语句）</span><br><span class="line"># init_connect&#x3D;&#39;SET NAMES utf8mb4&#39;</span><br></pre></td></tr></table></figure></li><li>重启计算机，查看是否生效<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; show variables like &#39;%char%&#39;;</span><br><span class="line">+--------------------------+---------------------------------------------------------+</span><br><span class="line">| Variable_name            | Value                                                   |</span><br><span class="line">+--------------------------+---------------------------------------------------------+</span><br><span class="line">| character_set_client     | utf8mb4                                                 |</span><br><span class="line">| character_set_connection | utf8mb4                                                 |</span><br><span class="line">| character_set_database   | utf8mb4                                                 |</span><br><span class="line">| character_set_filesystem | binary                                                  |</span><br><span class="line">| character_set_results    | utf8mb4                                                 |</span><br><span class="line">| character_set_server     | utf8mb4                                                 |</span><br><span class="line">| character_set_system     | utf8                                                    |</span><br><span class="line">| character_sets_dir       | C:\Program Files\MySQL\MySQL Server 8.0\share\charsets\ |</span><br><span class="line">+--------------------------+---------------------------------------------------------+</span><br><span class="line">8 rows in set, 1 warning (0.00 sec)</span><br></pre></td></tr></table></figure>至此，修改完成，注：character_set_system 默认utf8不支持修改。<h3 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h3><a href="https://docs.lvrui.io/2016/08/21/%E4%BF%AE%E6%94%B9MySQL%E7%9A%84%E5%AD%97%E7%AC%A6%E9%9B%86%E4%B8%BAutf8mb4/" target="_blank" rel="noopener">修改MySQL的字符集为utf8mb4</a><br><a href="https://blog.csdn.net/vfsdfdsf/article/details/89672717" target="_blank" rel="noopener">MySQL数据库字符集utf8如何转utf8mb4</a></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;utf8mb4是utf8的超集，utf8mb4解决了MySQL数据库存储emoji表情的问题。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://longxiaojiangi.github.io/categories/note/"/>
+    
+    
+      <category term="MySQL" scheme="https://longxiaojiangi.github.io/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Notepad++配置Python开发环境</title>
+    <link href="https://longxiaojiangi.github.io/note/181001-215607/"/>
+    <id>https://longxiaojiangi.github.io/note/181001-215607/</id>
+    <published>2018-10-01T13:56:07.000Z</published>
+    <updated>2020-02-08T16:02:05.577Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cmd</span> /k d: &amp; <span class="built_in">cd</span> "$(CURRENT_DIRECTORY)" &amp; python "$(FULL_CURRENT_PATH)" &amp; <span class="built_in">ECHO</span>. &amp; <span class="built_in">PAUSE</span> &amp; <span class="keyword">EXIT</span></span><br></pre></td></tr></table></figure><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;figure class=&quot;highlight cmd&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;cmd&lt;/span&gt; /k d: &amp;amp; &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; &quot;$(CURRENT_DIRECTORY)&quot; &amp;amp; python &quot;$(FULL_CURRENT_PATH)&quot; &amp;amp; &lt;span class=&quot;built_in&quot;&gt;ECHO&lt;/span&gt;. &amp;amp; &lt;span class=&quot;built_in&quot;&gt;PAUSE&lt;/span&gt; &amp;amp; &lt;span class=&quot;keyword&quot;&gt;EXIT&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://longxiaojiangi.github.io/categories/note/"/>
+    
+    
+      <category term="Python" scheme="https://longxiaojiangi.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《从Excel到Power BI 商业智能数据分析》（马世权 著）</title>
+    <link href="https://longxiaojiangi.github.io/note/180917-223550/"/>
+    <id>https://longxiaojiangi.github.io/note/180917-223550/</id>
+    <published>2018-09-17T14:35:50.000Z</published>
+    <updated>2020-02-08T16:16:00.386Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Logic will get you from A to B. Imagination will take you everywhere.</p></blockquote><a id="more"></a><h3 id="（一）、运算符"><a href="#（一）、运算符" class="headerlink" title="（一）、运算符"></a>（一）、运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">+   加</span><br><span class="line">-   减</span><br><span class="line">*   乘</span><br><span class="line">&#x2F;   除</span><br><span class="line">^   幂</span><br><span class="line">&#x3D;   等于</span><br><span class="line">&gt;   大于</span><br><span class="line">&lt;   小于</span><br><span class="line">&gt;&#x3D;  大于等于</span><br><span class="line">&lt;&#x3D;  小于等于</span><br><span class="line">&amp;   连接字符串</span><br><span class="line">&amp;&amp;  And</span><br><span class="line">||  Or</span><br></pre></td></tr></table></figure><h3 id="（二）、数据分析表达式"><a href="#（二）、数据分析表达式" class="headerlink" title="（二）、数据分析表达式"></a>（二）、数据分析表达式</h3><ul><li>Calculate(表达式,筛选器…) 对筛选结果应用表达式</li><li>All(表名或列名,列名…) 返回表中所有行或列中所有值，忽略已应用筛选器。</li><li>Allexpect(表名,列名…) 保留指定列，删除其它非指定列</li><li>Allselected(表名或列名) 清楚表或列中的筛选条件，但仅保留筛选器的条件。</li><li>Filter(表名,筛选条件) 返回应用筛选条件后的表，结合&amp;&amp;和||使用，达到复杂筛选目的。</li><li>Divide(分子,分母) 安全除法，分母为0时不会报错。</li><li>If(条件,返回值,返回值) 单个条件判断，多条件时只能嵌套。</li><li>Switch(true,条件,返回值…) Switch+True相当于多层If嵌套</li><li>Countrows(表名) 计算行数。</li><li>Related(列名) 从其它表返回相关值，相当于Vlookup函数。</li><li>Relatedtable(表名) 返回经筛选后仅包含相关行的表。</li><li>Lookupvalue(返回列,查找列,查找值…) 多条件查询，精准定位要查找的信息。</li></ul><h3 id="（三）、日期表"><a href="#（三）、日期表" class="headerlink" title="（三）、日期表"></a>（三）、日期表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">日期表 &#x3D; ADDCOLUMNS(</span><br><span class="line">    CALENDAR(DATE(2019,1,1),DATE(2019,12,31)),</span><br><span class="line">    &quot;年&quot;,YEAR([Date]),</span><br><span class="line">    &quot;月&quot;,MONTH([Date]),</span><br><span class="line">    &quot;日&quot;,DAY([Date]),</span><br><span class="line">    &quot;季度&quot;,ROUNDUP(MONTH([Date])&#x2F;3,0),</span><br><span class="line">    &quot;周&quot;,WEEKNUM([Date]),</span><br><span class="line">    &quot;年季度&quot;,YEAR([Date])&amp;&quot;Q&quot;&amp;ROUNDUP(MONTH([Date])&#x2F;3,0),</span><br><span class="line">    &quot;年月&quot;,YEAR([Date])*100+MONTH([Date]),</span><br><span class="line">    &quot;年周&quot;,YEAR([Date])*100+WEEKNUM([Date]),</span><br><span class="line">    &quot;星期&quot;,WEEKDAY([Date])</span><br><span class="line">)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Logic will get you from A to B. Imagination will take you everywhere.&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://longxiaojiangi.github.io/categories/note/"/>
+    
+    
+      <category term="Power BI" scheme="https://longxiaojiangi.github.io/tags/Power-BI/"/>
+    
+  </entry>
+  
+</feed>
