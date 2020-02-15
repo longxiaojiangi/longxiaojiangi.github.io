@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://longxiaojiangi.github.io/"/>
-  <updated>2020-02-08T16:15:48.609Z</updated>
+  <updated>2020-02-15T06:47:43.313Z</updated>
   <id>https://longxiaojiangi.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Git命令速查手册</title>
+    <link href="https://longxiaojiangi.github.io/note/191003-144429/"/>
+    <id>https://longxiaojiangi.github.io/note/191003-144429/</id>
+    <published>2019-10-03T06:44:29.000Z</published>
+    <updated>2020-02-15T06:47:43.313Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>git init：创建版本库</li><li>git add 文件名：将文件添加到工作区</li><li>git commit -m “在这里输入提交说明”：把文件提交到当前分支<a id="more"></a></li><li>git status：查看仓库状态</li><li>git diff 文件名：查看文章修改内容</li><li>git log：显示提交日志</li><li>git reset –hard HEAD^：回退到上个版本</li><li>git diff HEAD – 文件名：查看工作区与分支版本区别</li><li>git checkout – 文件名：丢弃工作区修改</li><li>git reset HEAD 文件名：把暂存区的修改撤销</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;git init：创建版本库&lt;/li&gt;
+&lt;li&gt;git add 文件名：将文件添加到工作区&lt;/li&gt;
+&lt;li&gt;git commit -m “在这里输入提交说明”：把文件提交到当前分支
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="https://longxiaojiangi.github.io/categories/note/"/>
+    
+    
+      <category term="Git" scheme="https://longxiaojiangi.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>MySQL数据库字符集修改为utf8mb4</title>
